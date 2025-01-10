@@ -143,7 +143,7 @@ int* generateBitonicSequence(int size) {
 int main( size_t argc, char** argv ) {
     srand(time(NULL));
 	
-	size_t tot = 50;
+	size_t tot = 1;
 	
 	size_t threads;
 	sscanf( argv[1], "%zu", &threads );
@@ -160,7 +160,7 @@ int main( size_t argc, char** argv ) {
 	double procTime = 0;
 	
 	for( size_t i = 0; i < tot; ++i ) {
-		double ms = batcherSort( arr, 32768 * 8, threads, infoTable, threadlist );
+		double ms = batcherSort( arr, 128, threads, infoTable, threadlist );
 		procTime += ms;
 	}
 	free( arr );
